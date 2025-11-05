@@ -2,6 +2,10 @@
 
 A comprehensive LaTeX template for a professional project (thesis work format for the Systems Engineering program), designed with modern typography, proper citation handling, and code highlighting capabilities.
 
+## Example
+
+My personal [YouTube data extraction thesis](https://github.com/LONG-TERM-EFFECTS-OF-SUFFERING/thesis) was built using this template.
+
 ## Project structure
 
 ```
