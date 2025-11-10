@@ -185,6 +185,7 @@ Handles image inclusion, color definitions, and figure/table positioning and cap
 ### Tables
 
 ```tex
+\usepackage{multirow}
 \usepackage{tabularx}
 \usepackage{booktabs}
 ```
@@ -198,7 +199,6 @@ creates publication-quality tables with proper spacing and rules.
 \usepackage[
 	backend=biber,
 	style=apa,
-	sorting=nyt,
 	doi=true,
 	url=true,
 	isbn=false
@@ -264,19 +264,23 @@ It provides consistent formatting for common mathematical operations.
 
 2. Introduction.
 
-3. Problem statement and justification.
+3. Problem statement.
 
-4. Objectives.
+4. Problem justification.
 
-5. Reference framework.
+5. Objectives.
 
 6. Project scope.
 
-7. Methodology.
+7. Reference framework.
 
-8. Development and implementation.
+8. Methodology.
 
-9. Budget.
+9. Development and implementation.
+
+10. Budget.
+
+For more details on each chapter's content, refer to [my personal notes](https://github.com/Br4z/gray_vault/tree/main/college/semesters/10/seminario_de_trabajo_de_grado).
 
 ### Back Matter
 
