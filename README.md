@@ -4,11 +4,11 @@ A comprehensive LaTeX template for a professional project (thesis work format fo
 
 ## Example
 
-My personal [YouTube data extraction thesis](https://github.com/LONG-TERM-EFFECTS-OF-SUFFERING/thesis) was built using this template.
+My personal [YouTube Data Extraction thesis](https://github.com/LONG-TERM-EFFECTS-OF-SUFFERING/thesis) was built using this template.
 
 ## Project structure
 
-```
+```text
 thesis/
 ├── main.tex                   # Main document file
 ├── preamble.tex               # Package imports and configurations
@@ -42,31 +42,6 @@ thesis/
 ```bash
 # Arch Linux
 sudo pacman -S texlive-latex texlive-bibtexextra biber python python-pygments
-```
-
-### Compilation
-
-### LaTex Workshop (Visual Studio Code extension)
-
-Add the following to your `settings.json`:
-
-```json
-    "latex-workshop.latex.outDir": "./build",
-    "latex-workshop.latex.tools": [
-        {
-            "name": "latexmk",
-            "command": "latexmk",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-pdf",
-                "-outdir=%OUTDIR%",
-                "-pdflatex=pdflatex -shell-escape %O %S",
-                "%DOC%"
-            ]
-        }
-    ]
 ```
 
 ## Document configuration explained
@@ -110,10 +85,10 @@ It ensures proper handling of special characters (accents, symbols) and enables 
 ```tex
 \usepackage{geometry}
 \geometry{
-	left=2.54cm,
-	right=2.54cm,
-	top=2.54cm,
-	bottom=2.54cm
+    left=2.54cm,
+    right=2.54cm,
+    top=2.54cm,
+    bottom=2.54cm
 }
 ```
 
@@ -157,10 +132,10 @@ Handles image inclusion, color definitions, and figure/table positioning and cap
 
 ```tex
 \usepackage[
-	colorlinks=true,
-	linkcolor=blue,
-	urlcolor=blue,
-	citecolor=red
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=red
 ]{hyperref}
 \usepackage{cleveref}
 ```
@@ -176,7 +151,6 @@ Handles image inclusion, color definitions, and figure/table positioning and cap
 \usepackage{algpseudocode}
 \usepackage{minted}
 ```
-
 
 - `algorithm`/`algpseudocode`: professional algorithm presentation.
 
@@ -197,11 +171,11 @@ creates publication-quality tables with proper spacing and rules.
 ```tex
 \usepackage{csquotes}
 \usepackage[
-	backend=biber,
-	style=apa,
-	doi=true,
-	url=true,
-	isbn=false
+    backend=biber,
+    style=apa,
+    doi=true,
+    url=true,
+    isbn=false
 ]{biblatex}
 ```
 
@@ -223,25 +197,28 @@ The template includes mathematical convenience commands:
 \newcommand{\ceil}[1]{\left \lceil #1 \right \rceil}
 \newcommand{\floor}[1]{\left \lfloor #1 \right \rfloor}
 
-\newcommand{\pln}[1]{\ln\left (#1 \right )}
+\newcommand{\pln}[1]{\ln \left (#1 \right)}
 \newcommand{\plog}[2][10]{\log_{ #1 } \left (#2 \right )}
 
 \newcommand{\pprime}[1]{\left (#1 \right )^\prime}
 
-\newcommand{\psin}[1]{\sin\left (#1 \right )}
-\newcommand{\pcos}[1]{\cos\left (#1 \right )}
-\newcommand{\ptan}[1]{\tan\left (#1 \right )}
-\newcommand{\pcsc}[1]{\csc\left (#1 \right )}
-\newcommand{\psec}[1]{\sec\left (#1 \right )}
-\newcommand{\pcot}[1]{\cot\left (#1 \right )}
+\newcommand{\psin}[1]{\sin \left (#1 \right )}
+\newcommand{\pcos}[1]{\cos \left (#1 \right )}
+\newcommand{\ptan}[1]{\tan \left (#1 \right )}
+\newcommand{\pcsc}[1]{\csc \left (#1 \right )}
+\newcommand{\psec}[1]{\sec \left (#1 \right )}
+\newcommand{\pcot}[1]{\cot \left (#1 \right )}
 
 \newcommand{\parcsin}[1]{\arcsin \left (#1 \right )}
 \newcommand{\parccos}[1]{\arccos \left (#1 \right )}
 \newcommand{\parctan}[1]{\arctan \left (#1 \right )}
 \DeclareMathOperator{\arcsec}{arcsec}
-\newcommand{\parcsec}[1]{\arcsec \left (#1 \right )}
+\newcommand{\parcsec}[1]{\arcsec \left(#1 \right )}
 \DeclareMathOperator{\arccsc}{arccsc}
-\newcommand{\parccsc}[1]{\arccsc \left (#1 \right )}
+\newcommand{\parccsc}[1]{\arccsc \left(#1 \right )}
+
+\newcommand{\por}[1]{\; \lor \;}
+\newcommand{\pand}[1]{\; \land \;}
 ```
 
 It provides consistent formatting for common mathematical operations.
@@ -280,9 +257,9 @@ It provides consistent formatting for common mathematical operations.
 
 10. Budget.
 
-For more details on each chapter's content, refer to [my personal notes](https://github.com/Br4z/gray_vault/tree/main/college/semesters/10/seminario_de_trabajo_de_grado).
+For more details on each chapter's content, refer to [my personal notes](https://github.com/braz9LKDI/gray_vault/tree/main/99-archive/college/semesters/10/seminario_de_trabajo_de_grado).
 
-### Back Matter
+### Back matter
 
 - References.
 
@@ -309,3 +286,15 @@ Modify `front_page.tex` to change title, author, or add additional information.
 4. `Code blocks`: Use `minted` environment for syntax highlighting.
 
 5. `Tables`: Use `booktabs` package for professional appearance.
+
+## Tooling
+
+This template is designed to be use with the [LaTeX Workshop VS Code extension](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop), and it uses my own [`style_config`](https://github.com/braz9LKDI/style_config) kit to keep the LaTeX source consistent, specifically its `latex_simplified/` stack:
+
+- latexindent handles formatting: indentation, line breaks around environments and alignment of tabular and math delimiters.
+
+- chktex catches common LaTeX issues like spacing problems, bad command usage and quoting mistakes.
+
+- latexmk orchestrates the build, running pdflatex and biber the right number of times until cross-references stabilize.
+
+Every config in the root of this repository (`.latexindent.yaml`, `.chktexrc`, `.latexmkrc` and `.vscode/`) is a direct copy from that stack. The same setup can be adopted in any LaTeX project by copying the `latex/`.
